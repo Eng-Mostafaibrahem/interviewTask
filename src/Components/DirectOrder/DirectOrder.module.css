@@ -1,0 +1,36 @@
+.centeredWord {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 13px; /* حجم الكلمة */
+  text-align: center;
+  margin: 20px 0; /* مسافة من الأعلى والأسفل */
+}
+
+.centeredWord::before,
+.centeredWord::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background-color: lightgrey;
+}
+
+.centeredWord::before {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.centeredWord::after {
+  right: 0;
+  transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 640px) {
+  .centeredWord::before,
+  .centeredWord::after {
+    width: 20%;
+  }
+}
